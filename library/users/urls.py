@@ -1,5 +1,5 @@
 """
-URL configuration for mpro project.
+URL configuration for library project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
@@ -14,14 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
 from django.contrib import admin
-from django.urls import path,include
-
-from mapp import views
-from mapp1 import views
+from django.urls import path
+from.import views
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('mapp/',include('mapp.urls')),
-    path('mapp1/',include('mapp1.urls')),
+    path('register/',views.register,name='register'),
+    path('login/',views.login,name='login'),
+    path('logout/',views.logout,name='logout'),
 ]

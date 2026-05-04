@@ -16,12 +16,17 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path
 
 from mapp import views
 from mapp1 import views
+from django.contrib import admin
+from django.urls import path
+from mapp import views
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('mapp/',include('mapp.urls')),
-    path('mapp1/',include('mapp1.urls')),
+    path('',views.home,name='home'),
+    path('first',views.first,name='first'),
+    path('second',views.second,name='second'),
+
+
 ]
